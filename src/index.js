@@ -6,7 +6,7 @@ import User from "./Common/FuncComponent"
 import "./Common/TestES6Info"
 import App from "./Common/App";
 import EventBindComponent from "./Common/EventBindComponent";
-
+import TodoList from "./Article/TodoList";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
@@ -14,5 +14,6 @@ root.render(
         <User/>
         <App/>
         <EventBindComponent/>
+        <TodoList/>
     </div>
 );
