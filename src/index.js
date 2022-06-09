@@ -7,6 +7,7 @@ import "./Common/TestES6Info"
 import App from "./Common/App";
 import EventBindComponent from "./Common/EventBindComponent";
 import TodoList from "./Article/TodoList";
+import TabCard from "./Article/TabCard";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
@@ -15,5 +16,6 @@ root.render(
         <App/>
         <EventBindComponent/>
         <TodoList/>
+        <TabCard/>
     </div>
 );
