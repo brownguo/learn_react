@@ -47,14 +47,16 @@ class TabCard extends Component {
                     <ul>
                         {
                             this.state.tab_list.map((item, idx)=>
-                                <li key={idx} id={parseInt(item.id * 100000)}>{item.ctx}</li>
+                                <li key={Math.random()} id={parseInt(item.id * 100000)}>{item.ctx}</li>
                             )
                         }
                     </ul>
                     <ul>
                         {
                             this.state.cinema_list.map((item,idx)=>
-                                <li key={item.filmId}>{item.filmId} - {item.name} - {item.synopsis}</li>
+                                <div>
+                                    <li key={Math.random()}>{item.filmId} - {item.name} - {item.synopsis}</li>
+                                </div>
                             )
                         }
                     </ul>
