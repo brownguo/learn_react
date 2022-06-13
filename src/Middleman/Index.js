@@ -29,6 +29,7 @@ export default class Index extends Component {
         return (
             <div>
                 {
+                    // 这里的onItemEvent是一个回调函数，子组件在onClick事件的时候回调。回调的时候把参数传回来然后setState
                     this.state.filmList.map((item)=>
                         <FilmItem key={item.filmId} {...item} onItemEvent={(name, val)=>{
                             this.setState({
