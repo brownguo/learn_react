@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import ControlTodoList from "./Article/ControlTodoList";
+import ControlLogin from "./User/ControlLogin";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
-        <ControlTodoList/>
+        <ControlLogin/>
     </div>
 );
