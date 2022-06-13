@@ -41,6 +41,7 @@ export default class Index extends Component {
                         }}/>
                     )
                 }
+                {/*这里的参数是父组件传递过去的，父组件的参数是子组件回调回来的。*/}
                 <FilmDetail detailInfo={this.state.detailInfo}/>
             </div>
         );
@@ -66,7 +67,7 @@ class FilmDetail extends Component{
     render() {
         return(
             <div style={{height:300, width:300, background:"#ccc", top:100, position:"fixed", right:0}}>
-                {this.props.detailInfo.name} - {this.props.detailInfo.info}
+                <h2>{this.props.detailInfo.name}</h2>{this.props.detailInfo.info}
             </div>
         )
     }
