@@ -43,7 +43,7 @@ class CtxList extends Component{
         console.log("call componentWillReceiveProps success..")
         if(nextProps.type === 1){
             this.setState({
-                list: [1,2,3]
+                list: [1,2,3,9]
             })
         }else{
             this.setState({
