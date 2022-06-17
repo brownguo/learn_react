@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import WillReceive from "./Cycle/WillReceive";
+import NewCycle from "./Cycle/NewCycle";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
-        <WillReceive/>
+        <NewCycle/>
     </div>
 );
