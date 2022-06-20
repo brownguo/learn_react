@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import NewCycle from "./Cycle/NewCycle";
+import App from "./Hooks/todoList";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
-        <NewCycle/>
+        <App/>
     </div>
 );
