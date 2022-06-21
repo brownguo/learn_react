@@ -10,8 +10,9 @@ export default function App() {
     }
     return (
         <div>
-            <input onChange={(evt)=>{
-                setText(evt.target.value)
+            <input onChange={(current_dom_evt)=>{
+                console.log(current_dom_evt.target.value)
+                setText(current_dom_evt.target.value)
             }} value={text}/>
             <button onClick={(event)=>{
                 setList([...list, text])
