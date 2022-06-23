@@ -1,4 +1,4 @@
-import react, {useContext, useEffect, useReducer, useState} from 'react';
+import react, {useContext, useEffect, useReducer} from 'react';
 import axios from "axios";
 
 const initState = {

@@ -20,6 +20,7 @@ const reducer = (prevState, action)=>{
     }
 }
 const GlobalContext = React.createContext()
+
 export default function App (){
     const [state, dispatch] = useReducer(reducer, initState)
     return(
