@@ -2,7 +2,7 @@ import react, {useContext, useEffect, useReducer, useState} from 'react';
 import axios from "axios";
 
 const initState = {
-    info: "",
+    infos: "",
     filmList: []
 }
 
@@ -15,7 +15,7 @@ const reducer = (prevState, action)=>{
             return newState
 
         case 'change_info':
-            newState.info = action.value
+            newState.infos = action.value
             return newState
         default:
             return prevState
@@ -58,7 +58,10 @@ function FilmItem(props){
         <div onClick={()=>{
             dispatch({
                 type:"change_info",
-                value: synopsis
+                value: {
+                    name: name,
+                    synopsis: synopsis
+                }
             })
         }}>
             <img src={poster} alt={name} style={{height:200, width:200}}/>
@@ -71,7 +74,7 @@ function FilmDetail(){
     const {state} = useContext(GlobalContext)
     return (
         <div style={{height:300, width:300, background:"#ccc", top:100, position:"fixed", right:0}}>
-            <h2>{state.info}</h2>{state.info}
+            <h2>{state.infos.name}</h2>{state.infos.synopsis}
         </div>
     )
 }
