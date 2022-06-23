@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from "./Hooks/useReducer3";
+import App from "./Routers/routerApp";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
