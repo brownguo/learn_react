@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class IndexApp extends Component {
+class Cinemas extends Component {
     render() {
         return (
             <div>
-                IndexAppPage
+                Cinemas.
             </div>
         );
     }
 }
 
-export default IndexApp;
+export default Cinemas;

@@ -1,19 +1,27 @@
 import React, {Component} from 'react';
-import {HashRouter, Redirect, Route} from "react-router-dom";
+import {HashRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 
-import DetailList from "../views/DetailList";
-import NewsList from "../views/NewsList";
-import IndexApp from "../views/IndexApp";
 import NotFound from "../views/NotFound";
+import Films from "../views/Films";
+import Cinemas from "../views/Cinemas";
+import Center from "../views/Center";
+import Detail from "../views/Detail";
 class IndexRouter extends Component {
     render() {
         return (
-            <HashRouter>
-                <Route path="/detail" component={DetailList}></Route>
-                <Route path="/news" component={NewsList}></Route>
-                <Redirect from="/" to="/news" exact/>
-                {/*<Route component={NotFound}/>*/}
-            </HashRouter>
+            <Router>
+                {this.props.children}
+                <Switch>
+                    <Route path="/films" component={Films}></Route>
+                    {/*动态路由*/}
+                    <Route path="/detail/:myid" component={Detail}></Route>
+                    <Route path="/cinemas" component={Cinemas}></Route>
+                    <Route path="/center" component={Center}></Route>
+                    {/* 模糊匹配 */}
+                    <Redirect from="/" to="/films" exact/>
+                    <Route component={NotFound}/>
+                </Switch>
+            </Router>
         );
     }
 }
