@@ -37,7 +37,7 @@ function FileItem(props) {
     return (
         <div>
             <li onClick={(current_dom)=>{
-                props.history.push(`/detail/${filmId}`)
+                // props.history.push(`/detail/${filmId}`)
                 console.log(filmId)
             }}>
                 {name}
