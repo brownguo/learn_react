@@ -6,7 +6,7 @@ import Films from "../views/Films";
 import Cinemas from "../views/Cinemas";
 import Center from "../views/Center";
 import Detail from "../views/Detail";
-import City from "../../Redux/views/City";
+import City from "../views/City";
 class IndexRouter extends Component {
     render() {
         return (
