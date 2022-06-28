@@ -12,8 +12,10 @@ function genSign(o, n, s, r, i) {
     console.log("开始decode:", o, n, s, r, i)
     for (var d = "", c = 0, u = Object.keys(o).sort(); c < u.length; c++) {
         var l = u[c], f = o[l];
-        var g = JSON.stringify(o[l]);
-        d += l + "=" + (g = g.split("").sort().join("")) + "&";
+        if ("object" === e(f) && null !== f) {
+            var g = JSON.stringify(o[l]);
+            d += l + "=" + (g = g.split("").sort().join("")) + "&";
+        } else 0 === f || f ? d += l + "=" + o[l] + "&" : (o[l] = "", d += l + "=&");
     }
     return d += "url=" + n + "&", d += s ? "accessToken=" + s + "&" : "", d += "timestamp=" + r + "&",
         d += "nonceStr=" + i + "&", d += "key=" + "ca235e27dcf94107889b9ad00ceebd48", md5(d);
@@ -29,7 +31,7 @@ data = {
     "bigType": 1
 }
 
-console.log(genSign(data, ' /consumer/order/shoppingTrolley/list', 'ODYyNjY5MDM1Njg5NDc2MDk2OjE6OTA0MzA0Njc2MTEwNDg5ODkxZTk2OTRkYTg4ZTdjYWQ=', 1656408172, '8be288e9eda14bdca0f8171fae08d826'))
+console.log(genSign({}, ' /consumer/order/shoppingTrolley/list', 'ODYyNjY5MDM1Njg5NDc2MDk2OjE6OTA0MzA0Njc2MTEwNDg5ODkxZTk2OTRkYTg4ZTdjYWQ=', 1656408172, '8be288e9eda14bdca0f8171fae08d826'))
 // var get_sign = genSign({},url.replace("https://www.gza-e.com/api", ""),accessToken,t,nonceStr)
 // default_headers = {
 //     "Host": "www.gza-e.com",
