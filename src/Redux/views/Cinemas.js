@@ -3,22 +3,30 @@ import store from "../redux/store";
 import getCinemasActionCreater from "../redux/actionCreater/getCinemasActionCreater";
 class Cinemas extends Component {
     state = {
-        cinemaList: []
+        cinemaList: [],
     }
     componentDidMount() {
         console.log("CinemasReducer ===> ", store.getState().CinemasReducer.list)
         if (store.getState().CinemasReducer.list.length === 0){
             store.dispatch(getCinemasActionCreater())
         }else{
-            console.log("读缓存")
+            console.log("store 缓存")
+            this.setState({
+                cinemaList: store.getState().CinemasReducer.list
+            })
         }
         //订阅
-        store.subscribe(()=>{
+        this.unsubscribe = store.subscribe(()=>{
             console.log("cinema 中订阅",store.getState().CinemasReducer.list)
             this.setState({
                 cinemaList: store.getState().CinemasReducer.list
             })
         })
+    }
+    // 取消订阅
+    componentWillUnmount(){
+        console.log("取消订阅...")
+        this.unsubscribe()
     }
 
     render() {
