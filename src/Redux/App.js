@@ -4,15 +4,16 @@ import "./views/css/App.css"
 import store from "./redux/store"
 import {useEffect, useState} from "react";
 export default function App(){
-    const [isShow, setIsShow] = useState(store.getState().show)
-    useEffect(()=>{         //首页订阅
+    const [isShow, setIsShow] = useState(store.getState().TabbarReducer.show)
+    useEffect(()=>{         //首页App订阅
+        console.log("首页App.js订阅 ===> ", store.getState())
         store.subscribe(()=>{
-            setIsShow(store.getState().show)
+            setIsShow(store.getState().TabbarReducer.show)
         })
     }, [])
     return (
         <div>
-            ReduxProject!
+            <p>Redux Project Index Page!</p><br />
             <MRouter>
                 {isShow && <TarBar></TarBar> }
             </MRouter>

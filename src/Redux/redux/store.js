@@ -1,30 +1,10 @@
-import {createStore} from "redux";
-
-const reducer = (prevState={    //reducer prevState给了一个初始值
-    show:true,
-    cityName: {
-        idx: 123,
-        item: "BEIJING"
-    }
-}, action) => {
-    let newState = {...prevState}
-    switch (action.type){
-        case 'tabbar-hide':
-            newState.show = false
-            return newState
-        case 'tabbar-show':
-            newState.show = true
-            return newState
-        case 'change-city':
-            newState.cityName = {
-                idx:action.value.idx,
-                item: action.value.item
-            }
-            return newState
-        default:
-            return prevState
-    }
-}
-
-const store = createStore(reducer)
+import {applyMiddleware, combineReducers, createStore} from "redux";
+import CityReducer from "./reducers/CityReducer";
+import TabbarReducer from "./reducers/TabbarReducer";
+import CinemasReducer from "./reducers/CinemasReducer";
+import reduxThunk from "redux-thunk"
+const reducer = combineReducers({
+    CityReducer, TabbarReducer, CinemasReducer
+})
+const store = createStore(reducer, applyMiddleware(reduxThunk))
 export default store

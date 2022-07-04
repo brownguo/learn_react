@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import store from "../redux/store";
+import {changeCityAction} from "../redux/actionCreater/CityAction";
 class City extends Component {
     state = {
         cityList: ['北京', '上海', '杭州', '深圳', '天津', '重庆']
@@ -11,12 +12,10 @@ class City extends Component {
                     {
                         this.state.cityList.map((item, idx)=>{
                             return <li key={idx} onClick={()=>{
-                                store.dispatch({
-                                    type:"change-city",
-                                    value: {
-                                        idx, item
-                                    }
-                                })
+                                store.dispatch(
+                                    // 索引和ctx传给action
+                                    changeCityAction(idx, item)
+                                )
                                 this.props.history.goBack()
                             }}>{item}</li>
                         })

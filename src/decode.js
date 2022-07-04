@@ -1,7 +1,5 @@
 var md5 = require('md5');
 var axios = require('axios')
-// var e = require("@babel/runtime/helpers/typeof.js");
-
 var nonceStr = "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, function(e) {
     var a = 16 * Math.random() | 0;
     return ("x" == e ? a : 3 & a | 8).toString(16);
@@ -11,7 +9,6 @@ var accessToken = "ODgzMzcyNDc1ODM5MTUyMTI4OjE6YjBiNTBjMmY2ZGZmNGI1ODk4YmJlY2U5Y
 const PLAM_KEY = 'ca235e27dcf94107889b9ad00ceebd48'
 
 var a =  [{"ostId":"991729832864251904","proId":"915349160901738496","quantity":1},{"ostId":"991728563323928576","proId":"915348113533698048","quantity":1}]
-// console.log("a", a.split("").sort().join(""))
 console.log(JSON.stringify(a).split("").sort())
 var timestamp = parseInt(String(new Date().getTime() / 1e3))
 function genSign(o, n, s, r, i) {
