@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from "./ReactRedux/App";
+import App from "./Immutable/App";
 import {Provider} from "react-redux";
-import store from "./ReactRedux/redux/store";
+// import store from "./ReactRedux/redux/store";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
-        <Provider store={store}>
+        {/*<Provider store={store}>*/}
             <App/>
-        </Provider>
+        {/*</Provider>*/}
     </div>
 );
