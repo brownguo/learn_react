@@ -9,22 +9,14 @@ var accessToken = "ODgzMzcyNDc1ODM5MTUyMTI4OjE6YjBiNTBjMmY2ZGZmNGI1ODk4YmJlY2U5Y
 const PLAM_KEY = 'ca235e27dcf94107889b9ad00ceebd48'
 
 var a =  [{"ostId":"991729832864251904","proId":"915349160901738496","quantity":1},{"ostId":"991728563323928576","proId":"915348113533698048","quantity":1}]
-console.log(JSON.stringify(a).split("").sort())
 var timestamp = parseInt(String(new Date().getTime() / 1e3))
 function genSign(o, n, s, r, i) {
     var n = n.replace("https://www.gza-e.com/api", "")
     for (var d = "", c = 0, u = Object.keys(o).sort(); c < u.length; c++) {
         var l = u[c], f = o[l];
         if ("object" === typeof (f) && null !== f) {
-            console.log("ol", o[l])
             var g = JSON.stringify(o[l]);
-            console.log("json g", g)
-            console.log("type g", typeof g)
             d += l + "=" + (g = g.split("").sort().join("")) + "&";
-            console.log("l", l+g)
-            console.log("d", d)
-            console.log("f", d)
-
         } else 0 === f || f ? d += l + "=" + o[l] + "&" : (o[l] = "", d += l + "=&");
     }
     return d += "url=" + n + "&", d += s ? "accessToken=" + s + "&" : "", d += "timestamp=" + r + "&",
@@ -39,10 +31,6 @@ var payloads = {
     "orderDetailList": [{
         "ostId": "991729832864251904",
         "proId": "915349160901738496",
-        "quantity": 1
-    }, {
-        "ostId": "991728563323928576",
-        "proId": "915348113533698048",
         "quantity": 1
     }]
 }

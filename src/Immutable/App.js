@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import { fromJS } from "immutable"
-import { List, Divider, Button, Card, Typography, Tag } from "antd";
+import { List, Divider, Button } from "antd";
 
 class App extends Component {
     state = {
@@ -39,7 +39,7 @@ class App extends Component {
                     loading={this.state.loading}
                     onClick={() => this.setState({loading: true})}
                 >
-                    Click me!1111
+                    Click me!
                 </Button>
 
             </div>
