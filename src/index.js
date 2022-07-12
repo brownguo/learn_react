@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import App from "./Immutable/App";
-import {Provider} from "react-redux";
-// import store from "./ReactRedux/redux/store";
+import 'antd/dist/antd.css'
+import App from "./Mobx/App";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
-        {/*<Provider store={store}>*/}
             <App/>
-        {/*</Provider>*/}
     </div>
 );
