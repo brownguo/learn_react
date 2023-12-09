@@ -4,7 +4,7 @@ class Cinemas extends Component {
     render() {
         return (
             <div>
-                Cinemas.
+                Cinemas.aaa
             </div>
         );
     }

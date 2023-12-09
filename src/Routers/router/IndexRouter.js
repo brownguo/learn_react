@@ -11,7 +11,7 @@ class IndexRouter extends Component {
     render() {
         return (
             <Router>
-                {this.props.children}
+                this.props.children:[ {this.props.children}]
                 <Switch>
                     <Route path="/films" component={Films}></Route>
                     {/*动态路由*/}

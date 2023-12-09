@@ -3,6 +3,7 @@ import {Button} from "antd";
 import {autorun} from "mobx";
 import store from "./mobx/store";
 
+console.log(store.list);
 class App extends Component {
     state = {
         isLoading: false

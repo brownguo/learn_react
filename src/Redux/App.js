@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 export default function App(){
     const [isShow, setIsShow] = useState(store.getState().TabbarReducer.show)
     useEffect(()=>{         //首页App订阅
-        console.log("首页App.js订阅 ===> ", store.getState())
+        console.log("在首页App.js订阅 ===> ", store.getState())
         store.subscribe(()=>{
             setIsShow(store.getState().TabbarReducer.show)
         })

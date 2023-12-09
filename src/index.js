@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'antd/dist/antd.css'
-import App from "./Mobx/App";
+import App from "./ReviewReact/App";
+import store from './ReviewReact/store/store'
+import { Provider } from 'react-redux'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
+        <Provider store={store}>
             <App/>
+        </Provider>
     </div>
 );
