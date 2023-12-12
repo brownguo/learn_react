@@ -7,6 +7,7 @@ const counterSlice = createSlice({
         disabled: false
     },
     reducers: {
+        //网络请求啥的，都写在这里就好哟，2023年12月12日17:05:40
         RPLUS: (state)=>{
             state.value += 1
             if (state.value > 0){
