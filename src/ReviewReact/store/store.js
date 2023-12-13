@@ -20,9 +20,9 @@ import { configureStore } from '@reduxjs/toolkit'
  // // 抛出
  // export default store
 
-import counterReducer from "./counterSlice/CounterSlice";
+import countersReducer from "./counterSlice/CounterSlice";
 export const store = configureStore({
     reducer: {
-        counter: counterReducer
+        counter: countersReducer
     },
 })
